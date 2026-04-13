@@ -7,6 +7,94 @@
 <title>----タイトル----</title>
 <link rel="stylesheet" href="style.css" type="text/css">
 <script src="js/navbar.js"></script>
+<script>
+  (function() {
+var timeAgo;
+
+timeAgo = function(dateParam) {
+var DAY_IN_MS, d, date, isThisYear, isToday, isYesterday, minutes, seconds, t, today, yesterday;
+if (!dateParam) {
+  return null;
+}
+date = typeof dateParam === 'object' ? dateParam : new Date(dateParam);
+DAY_IN_MS = 86400000;
+today = new Date();
+yesterday = new Date(today - DAY_IN_MS);
+seconds = Math.round((today - date) / 1000);
+minutes = Math.round(seconds / 60);
+isToday = today.toDateString() === date.toDateString();
+isYesterday = yesterday.toDateString() === date.toDateString();
+isThisYear = today.getFullYear() === date.getFullYear();
+if (seconds < 5) {
+  return "now";
+} else if (seconds < 60) {
+  return seconds + " seconds ago";
+} else if (seconds < 90) {
+  return "about a minute ago";
+} else if (minutes < 60) {
+  return minutes + " minutes ago";
+} else if (isToday) {
+  t = date.toLocaleString("en-gb", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  return "today at " + t;
+} else if (isYesterday) {
+  t = date.toLocaleString("en-gb", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  return "yesterday at " + t;
+} else if (isThisYear) {
+  d = date.toLocaleString("en-gb", {
+    day: "numeric",
+    month: "long"
+  });
+  t = date.toLocaleString("en-gb", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+  return d + " at " + t;
+}
+d = date.toLocaleString("en-gb", {
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+});
+t = date.toLocaleString("en-gb", {
+  hour: "2-digit",
+  minute: "2-digit"
+});
+return d + " at " + t;
+};
+
+document.addEventListener("DOMContentLoaded", (function(_this) {
+return function() {
+  var nowlistening, nowlisteningdate, target;
+  target = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=miyhy&limit=1&api_key=e67b820dd54fde2832bcc182c38fdd20&format=json";
+  nowlistening = document.querySelector("#nowlistening");
+  nowlisteningdate = document.querySelector("#nowlisteningdate");
+  return fetch(target).then(function(res) {
+    return res.json();
+  }).then(function(body) {
+    var track, trackDate;
+    track = body.recenttracks.track[0];
+    trackDate = track["@attr"] && track["@attr"].nowplaying ? "now playing" : timeAgo(track.date["#text"] + " UTC").toLowerCase();
+    nowlistening.innerHTML = (track.artist['#text'].toLowerCase()) + " - " + (track.name.toLowerCase());
+    nowlistening.href = track.url;
+    return nowlisteningdate.innerHTML = "(" + trackDate + ") ";
+  })["catch"](function(err) {
+    console.log(err);
+    nowlistening.innerHTML = "oops";
+    return nowlisteningdate.innerHTML = "error happened trying to talk to last.fm :(";
+  });
+};
+})(this));
+
+}).call(this);
+
+</script>      
+
 </head>
 <body>
 <!-- ▼全体の囲み▼ -->
@@ -69,9 +157,19 @@ URL : http://opal.arceus.day<br>
 <!-- ▼メインの内容▼ -->
 
 <h2> Mika's Library ~</h2>
-<p><span class="marker">Hiya! I'm a fancy gay lady with perfect bangs that loves all things fandom, literature, and Marxism.<span><img src="image/le.gif" style="width:10px"></span> </span><span style="font-family:EmojiFont;"><br>sq
+<p><span class="marker">Hiya! I'm a fancy gay lady with perfect bangs that loves all things fandom, literature, and Marxism.<span><img src="image/le.gif" style="width:10px"></span> </span><span style="font-family:EmojiFont;"><br><br>sq
   </span>
-    You'll find reviews, musings, and plenty miscellaneous strings of words on this site. I also like to share my life with my sweet girlfriend and devote myself to fictional ships.</p>
+    You'll find reviews, musings, and plenty more from the delightful webmistress. My biggest hobbies are sharing my life with my sweet girlfriend and devoting myself to fictional ships.  <br><br>It's time for tea! (
+  <span id="New_York_z161" style="font-size:15px"></span> )
+  <script src="//widget.time.is/t.js"></script>
+  <script>
+  time_is_widget.init({New_York_z161:{time_format:"12hours:minutes:secondsA"}});
+  </script>   <img src="image/teacup.webp" style="width:15px;">
+  
+</p><p>
+ listening to <a href="#" id="nowlistening"></a> <span id="nowlisteningdate"></span> <img src="image/parrot.gif"> 
+
+
 <dl>
     <h3>Rapid-fire!</h3>
 
@@ -83,13 +181,11 @@ URL : http://opal.arceus.day<br>
 <dt>Languages?</dt>
 <dd><p>English, a little Chinese, a lot less  Korean</p></dd>
 </dl>
-</p>  <br>
-
+  <br>
 <h2>Things I love</h2>
+<p>Currently, I'm especially invested in <em>Supergirl, TLT (Gideon the Ninth), and Wynonna Earp</em>. 
 
-<br>
-<a href="#">テキストリンク</a>はこうなりまして、<em>文章を強調</em>したり<span class="marker">マーカー風文字</span>にしたりするとこうなりますのです。
-
+</p>
 <!-- ▲メインの内容▲ -->
 </article>
 
