@@ -95,6 +95,44 @@ return function() {
 
 </script>      
 
+<style>
+        /* This is the magic CSS */
+        .sticky-bottom-image {
+            position: fixed;   /* Keeps the image fixed relative to the screen */
+            bottom: -6%;         /* Aligns it perfectly to the bottom edge */
+            left: 11%;         /* Moves it to the horizontal center */
+            transform: translateX(-50%); /* Perfectly centers the image * /
+            z-index: 9999;     /* Ensures it stays on top of all other content */
+            
+            /* Optional styling */
+            max-width: 100%;   /* Prevents the image from overflowing small screens */
+            height: 400px;
+            
+            
+        }
+        @media (max-width: 600px) {
+    .sticky-bottom-image {
+        display: none; /* Hides the image completely */
+    }
+  }
+    .sticky-top-right-image {
+    position: fixed;   /* Keeps the image fixed relative to the screen */
+    top: 0;            /* Aligns it perfectly to the top edge */
+    left: 0;          /* Aligns it perfectly to the right edge */
+    z-index: 9999;     /* Ensures it stays on top of all other content */
+    
+    /* Optional styling */
+    max-width: 300px;  /* Limits the size so it doesn't block too much content */
+    height: auto;
+}
+
+/* Keeps it hidden on mobile screens */
+@media (max-width: 600px) {
+    .sticky-top-right-image {
+        display: none; 
+    }
+}
+    </style>
 </head>
 <body>
 <!-- ▼全体の囲み▼ -->
@@ -113,7 +151,7 @@ return function() {
 <header>
 <div id="header-inner">
 <h1><a href="index.html">Opalesque </a><a style="font-family:'EmojiFont';">&#x4a;</a></h1>
-It's a Resurrection Beast,<br> honey!! Thank you! Next!!
+<p>It's a Resurrection Beast,<br> honey!! Thank you! Next!!</p>
 
 
 </div>
@@ -206,11 +244,8 @@ URL : http://opal.arceus.day<br>
 <dl>
     <h3>Rapid-fire!</h3>
 
-<dt>Location?</dt>
-<dd>D.C. & Cambridge, MA</dd>
-<dt>Age?</dt>
-<dd>Just about 18</dd>
-
+<dt>Location...?</dt>
+<dd><p>Washington, D.C. & Cambridge, Massachusetts</p></dd>
 <dt>Languages?</dt>
 <dd><p>English, a little Chinese, a lot less  Korean</p></dd>
 </dl>
@@ -255,8 +290,7 @@ URL : http://opal.arceus.day<br>
 <dd><p> <a href="https://www.instagram.com/1shinae_/">Tara <span style="font-family:'EmojiFont';">&#x42;</span> </a>, <a href="https://www.tumblr.com/cinurelan">Cin</a>, <a href="https://x.com/chjn678">Lily</a>, <a href="https://www.tumblr.com/paninideeni">Deenie</a>, <a href="https://www.tumblr.com/gradeofexecution">Mar</a>, <a href="https://ne0matic.tumblr.com">Alice</a>
 </p>
 </dd>
-
-
+  <img src="image/Anthy.png" alt="Sticky Footer" class="sticky-bottom-image">
 <dt></dt>
 <dd></dd>
 </dl>

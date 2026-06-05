@@ -25,7 +25,8 @@
 <header>
 <div id="header-inner">
 <h1><a href="index.html">Opalesque </a><a style="font-family:'EmojiFont';">&#x4a;</a></h1>
-DESCRIPTION
+<p>Today I'm gonna enjoy <br> the company of a Frenchman.</p>
+
 
 </div>
 <div id="open"><span id="open-icon"></span></div>
@@ -66,9 +67,55 @@ URL : http://opal.arceus.day<br>
 
 <article>
 <!-- ▼メインの内容▼ -->
+<style>/* hides the feed title */
+p.rss-title {
+    display:none;
+}
 
-<h2> This page is...</h2>
-<p>A work in progress! Check back later.</p> 
+li.rss-item {
+    list-style-type:none;   /* this removes the bullet points */
+    margin-bottom:20px; /* adds spacing under entry content */
+    line-height:1.1;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    outline: 1px solid;
+      outline-offset: 5px; /* Pushes the outline 5px away from the element */
+      padding: 4px;
+margin-left: 15px;
+margin-right: 15px;
+
+}
+
+/* this styles the blog title link */
+li.rss-item a {
+    font-weight:bold;
+    text-decoration:none; /* removes underline */
+}
+
+/* this styles the date */
+.rss-date {
+    display:inline-block; /* need this to add padding around each number */
+    padding-top:10px;
+    padding-bottom:10px;
+    font-style:italic;
+}
+/* hides the weird # of comments (displayed as 0 in demo) */
+a.rss-item:last-child {
+    display:none;
+}
+a.rss-item:first-child {
+    font-size:  20px;
+}
+
+
+</style>
+<h2> Why not? The pitcher is the coolest. </h2> 
+<p>It's the blog! I post reviews of movies and books, my life story, and all sorts of thingamajigs.</p>
+<br>
+<script language="JavaScript" src="https://www.feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Fmelodium.dreamwidth.org%2Fdata%2Frss&date=y&utf=y&html=a"  charset="UTF-8" type="text/javascript"></script>
+
+<noscript>
+<a href="https://www.feedroll.com/rssviewer/feed2js.php?src=https%3A%2F%2Fmelodium.dreamwidth.org%2Fdata%2Frss&date=y&utf=y&html=y">View RSS feed</a>
+</noscript>
 
 <!-- ▲メインの内容▲ -->
 </article>
