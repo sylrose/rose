@@ -1,26 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = `
-      <li><a href="index.html">Home <span style="font-family:EmojiFont;">g
+    <ul>  <li><a href="index.html">Home <span style="font-family:EmojiFont;">g
   </span>
 </a>
       <li><a href="writings.html">Writings+
-</a>
+</a></li>
       <li><a href="blog.html">Blog
-</a>
+</a></li>
 
       <li><a href="books.html">Books       
-</a>
+</a></li>
       <li><a href="politics.html">Politics
-
-      </a>
+      </a></li>
       <li><a href="music.html">Music
-</a>
+</a></li>
       <li><a href="illust.html">Illust             
-</a>
-      <li><a href="photos.html">Photos</a>
-      <li><a href="fandom.html">Fandom</a>
-      <li><a href="world.html">World</a>
-  `;
+</a></li>
+      <li><a href="photos.html">Photos</a></li>
+      <li><a href="fandom.html">Fandom</a></li>
+      <li><a href="world.html">World</a></li>
+  </ul>`;
 
   document.getElementById("navbar").innerHTML = navbar;
 });

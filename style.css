@@ -95,15 +95,18 @@ padding:40px 20px;margin:0 auto;
 height:167px;width:287px;
 
 }
-#leftcolumn{
-position:relative;
-background:url(image/back01.gif);
-border-right:3px solid #ffebeb;
-float:left;
-padding:10px;
-height:500px;width:340px; /* 左側の幅と高さ 高さは#contentsと同じ */
-}
-#rightcolumn{
+#leftcolumn {
+    position: relative;
+    background: url(image/back01.gif);
+    border-right: 3px solid #ffebeb;
+    float: left;
+    padding: 10px;
+    overflow-y: auto;
+    height: 100%; /* Force it to stretch to the bottom of the #contents box */
+    width: 340px; 
+    box-sizing: border-box; /* Keeps padding from breaking the width */
+    -webkit-overflow-scrolling: touch;
+}#rightcolumn{
 background:#fff;
 float:right;
 padding:10px;
@@ -120,9 +123,8 @@ min-height:50px
     メニューの多さによって高さは調節してください
 ------------------------------ */
 #leftcolumn-text{
-height:200px;
-overflow:auto;
--webkit-overflow-scrolling:touch
+height:auto;
+overflow:visible;
 }
 
 /* ===================================
@@ -148,7 +150,9 @@ color:#775632;
 margin:20px 0;
 line-height:1;
 width:100%;
-text-align:center
+text-align:center;
+overflow-y:auto;
+-webkit-overflow-scrolling:touch
 }
 nav li{
 display:inline-block; /* 横並び */
@@ -358,7 +362,7 @@ border:3px solid #ffebeb;
 float:none;
 margin-bottom:20px;
 height:auto;width:100%;
-overflow:visible;
+overflow-y:visible;
 -webkit-overflow-scrolling:auto
 }
 #leftcolumn-inner{
@@ -367,7 +371,7 @@ background-size:contain
 }
 #leftcolumn-text{
 height:auto;
-overflow:visible;
+overflow-y:auto;
 -webkit-overflow-scrolling:auto
 }
 #leftcolumn-text a{
@@ -491,3 +495,26 @@ top:10px;right:10px/* 位置 */
 .line01,.line02{
 background-size:contain
 }}
+/* Apply this to your page or container to hide scrollbars until needed */
+html, body {
+    overflow: auto; 
+}
+
+/* Your existing scrollbar styling stays exactly the same */
+::-webkit-scrollbar {
+    width: 10px;  
+    height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 8px;
+    border: 2px solid #e5abab;
+    min-height: 40px; 
+    min-width: 40px; 
+}
