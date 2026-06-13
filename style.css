@@ -332,8 +332,8 @@ position:static
 }
 body{
 font-size:1.3em;
-height:auto
-}
+height: max-content;       /* Change from auto to max-content */
+    min-height: 100%;          /* Forces the background to cover everything */}
 #wrapper{
 height:auto;
 min-height:inherit
