@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <li><a href="photos.html">Photos</a></li>
       <li><a href="fandom.html">Fandom</a></li>
       <li><a href="world.html">World</a></li>
-  </ul>`;
+  </ul>
+  `;
 
   document.getElementById("navbar").innerHTML = navbar;
 });
