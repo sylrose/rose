@@ -93,7 +93,20 @@ URL : http://rose.arceus.day<br>
 
 </style>
 <h2> My wonderful world of love.</h2>
-<h3 style="margin-top:0; margin-bottom:5px;">Fanlistings</h3> 
+<div class="textbox">Navigate:  <a href="#currents">Currents</a> | <a href="#fanlistings">Fanlistings</a> | <a href="#logs">Logs</a> | <a href="#shrines">Shrines</a>
+</div>
+
+<h3 style="margin-bottom:5px; margin-top:15px" id="currents">CURRENTLY ! </h3>
+
+<dl>
+    <dt>reading ...</dt>
+        <dd><p>The Wretched of the Earth (Frantz Fanon); Mrs. S (K Patrick); a lot of <a href="#">comics</a></p></dd>
+        
+    <dt>watching ...</dt>
+        <dd><p>Pantheon (Netflix); Imagine Me & You (2005); Drifting Flowers (2008)</p></dd>
+
+</dl>
+<h3 style="margin-top:0; margin-bottom:5px;" id="fanlistings">Fanlistings</h3> 
 <div style="height: 150px; width: 90%; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
     <div class="image-tint">
          <a href="https://totallygirl.net/tea/index.php"><img src="image/tea.png"></a>
@@ -169,19 +182,14 @@ URL : http://rose.arceus.day<br>
     <div class="image-tint">
          <a href="https://endymion.nu/shoujo/about.php"><img src="image/shoujo.png"></a>
     </div>
-
+    <div class="image-tint">
+         <a href="https://www.marheavenj.net/arisa/"><img src="image/arisa.jpg"></a>
+    </div>
+        <div class="image-tint">
+         <a href="https://imaginary.nu/henshin/"><img src="image/henshin.png"></a>
+    </div>
 
 </div>
-
-<h3 style="margin-bottom:5px;">CURRENTLY ! </h3>
-<dl>
-    <dt>reading ...</dt>
-        <dd><p>The Wretched of the Earth (Frantz Fanon); Mrs. S (K Patrick); a lot of <a href="#">comics</a></p></dd>
-        
-    <dt>watching ...</dt>
-        <dd><p>Pantheon (Netflix); Imagine Me & You (2005); Drifting Flowers (2008)</p></dd>
-
-</dl>
 
 <!-- ▲メインの内容▲ -->
 </article>
@@ -204,5 +212,19 @@ URL : http://rose.arceus.day<br>
 <script src="js/jquery.height.js"></script>
 <script src="js/jquery.scroll.js"></script>
 <script src="js/jquery.toggle.js"></script>
+<script>
+$(document).ready(function(){
+  $('.textbox a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var target = $(this.hash);
+    if (target.length) {
+      $('#rightcolumn').animate({
+        scrollTop: target.offset().top - $('#rightcolumn').offset().top + $('#rightcolumn').scrollTop()
+      }, 500);
+    }
+  });
+});
+</script>
+
 </body>
 </html>

@@ -97,24 +97,21 @@ return function() {
 
 <style>
         .sticky-bottom-image {
-            position: fixed;   /* Keeps the image fixed relative to the screen */
-            bottom: -6%;         /* Aligns it perfectly to the bottom edge */
-            left: 11%;         /* Moves it to the horizontal center */
-            transform: translateX(-50%); /* Perfectly centers the image * /
-            z-index: 9999;     /* Ensures it stays on top of all other content */
-            
-            /* Optional styling */
-            max-width: 100%;   /* Prevents the image from overflowing small screens */
+            position: fixed; 
+            bottom: -6%;      
+            left: 11%;     
+            transform: translateX(-50%);
+          
+            max-width: 100%;  
             height: 400px;
             
             
         }
         @media (max-width: 600px) {
     .sticky-bottom-image {
-        display: none; /* Hides the image completely */
+        display: none; 
     }
   }
-  /* The container wrapping both the text and the tooltip */
 .tooltip-container {
   position:relative;
   display: inline-block;
@@ -127,25 +124,21 @@ return function() {
 .tooltip-container .tooltip-box {
   visibility: hidden;
   opacity: 0;
-  width: 150px;
+  width: 130px;
   background-color: #e9c2c2;
   color: #584343;
   text-align: center;
   border-radius: 6px;
   padding: 8px;
   
-  /* Position the tooltip above the text */
   position: absolute;
   z-index: 1;
   bottom: 90%; 
   left: -10%;
   transform: translateX(0%);
-  
-  /* Smooth fade-in effect */
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Style the image inside the tooltip */
 .tooltip-container .tooltip-box img {
   width: 90%;
   height: auto;
@@ -157,14 +150,12 @@ return function() {
   margin-bottom: 6px;
 }
 
-/* Style the text inside the tooltip */
 .tooltip-container .tooltip-box p {
   margin: 0;
   font-size: 12px;
   line-height: 1.4;
 }
 
-/* Show the tooltip when hovering over the container */
 .tooltip-container:hover .tooltip-box {
   visibility: visible;
   opacity: 1;
@@ -556,8 +547,37 @@ display: inline-block;
 
 
 </div>
-  <img src="image/Anthy.png" alt="Anthy Himemiya" class="sticky-bottom-image">
-<dt></dt>
+<style>
+.image-tint {
+  /* Positioning the container */
+  position: fixed; 
+  bottom: -6%;      
+  left: 11%;     
+  transform: translateX(-50%);
+  z-index: 999;
+  
+  /* Dimensions */
+  height: 400px;
+  display: block;
+  
+  /* REMOVED background-color to preserve your transparent PNG edges! */
+}
+
+.image-tint img {
+  display: block;
+  height: 100%;  
+  width: auto;
+  object-fit: cover;
+
+  /* THE VIBRANT PINK FILTER (Keeps white white & background transparent)
+     1. brightness(0.5) boosts the midtones so sepia can catch it strongly.
+     2. sepia(1) shifts the black lines to a tintable brown base.
+     3. saturate(8) cranks the pink intensity way up.
+     4. hue-rotate(305deg) dials the color straight into a rich magenta/pink. */
+filter: brightness(0.75) sepia(0.5) saturate(2) hue-rotate(305deg);
+
+}
+</style>  <dt></dt>
 <dd></dd>
 </dl>
 </p>
@@ -570,6 +590,7 @@ display: inline-block;
 <div>  
 </div>
 </div>
+
 </footer><!-- ▲フッタ▲ -->
 
 </div><!-- ▲中央▲ -->
@@ -584,5 +605,11 @@ display: inline-block;
 <script src="js/jquery.height.js"></script>
 <script src="js/jquery.scroll.js"></script>
 <script src="js/jquery.toggle.js"></script>
+<div class="image-tint">
+  <img src="image/taradrawing.png" alt="Anthy Himemiya">
+
+  </div>
+
 </body>
+
 </html>

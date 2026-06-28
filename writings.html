@@ -70,14 +70,48 @@ URL : http://rose.arceus.day<br>
 <!-- ▼メインの内容▼ -->
 
 <h2> Contents ~</h2>
-<p>
+<p style="margin-bottom:10px;">
 Peruse my various scribbles. I've got a penchant for women of all kinds; I write everything from female identity to femslash. Check out <a href="/books.html">books</a> and <a href="/visual">visual</a> to explore my muses. </p>
+<div class="image-tint"><img src="image/bannerr.png" style="max-width: 100%"></div>
+
 <div class="textbox">Navigate: <a href="#poetry">Poetry</a> |  <a href="#fic">Fanfiction</a> | <a href="#fiction">Fiction</a> | <a href="#nonfic">Nonfiction</a>
 </div>
 <style>
     pre.poem {
         font-family:'Times New Roman', Times; white-space: pre-wrap; padding-left:8px; text-align:left;  letter-spacing:0px; line-height:1.2;
     }
+    .image-tint {
+  background-color: #efbacc; /* Your tint color */
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+/* 2. Apply the tint by default */
+.image-tint img {
+  display: block;
+  mix-blend-mode: luminosity; /* Changes image colors */
+  transition: mix-blend-mode 0.1; /* Smooth transition */
+  object-fit: cover;
+
+}
+
+        .sticky-bottom-image {
+            position: fixed; 
+            bottom: -10%;      
+            left: 11%;     
+            transform: translateX(-45%);
+            height: 500px;
+            
+            
+        }
+        @media (max-width: 600px) {
+    .sticky-bottom-image {
+        display: none; 
+    }
+  }
+
+
 </style>
 <h3 id="poetry">Poetry</h3>
 
@@ -329,7 +363,9 @@ History, a subject which generally has the reputation of examining events that o
 
 The first path of national pride is cultural supremacy, or, euphemistically, patriotism. In forty-seven states in the United States, the Pledge of Allegiance is recited over loudspeakers each morning in public schools, alongside a moment of silence. Written by Francis Bellamy to celebrate the 400th year of the “discovery” of America by colonial settlers, the phrase “under God” was added in 1954. While controversial, it is undeniable that the presence of Christianity is intertwined with the United States pledge, and furthermore blended with the baseline language that is meant to invoke patriotism at an early age. Yet, this form of pride, in which indoctrination plays a large role— repetition and recitation fails to create any sort of real understanding in a pedagogical sense— is objectively based in misinterpretations of both American ideals and American actions. The most glaring issue with the Pledge is that despite the First Amendment’s enshrinement of religious freedom, the poem invokes not just “a God”, but “God”. While this phrase was not proven sufficient ground for referencing a monotheistic Christian god in the 2002 Supreme Court decision Elk Grove Unified School District v. Newdow, its true purpose in United States history has not gone unnoticed, and still plays a part in the oppression of religious minorities today.
 </pre></div>
-
+<div class="image-tint-2">
+  <img src="image/Knight3.png" alt="Anthy Himemiya" class="sticky-bottom-image">
+</div>
 
 </article>
 </div><!-- ▲右側▲ -->
@@ -350,5 +386,18 @@ The first path of national pride is cultural supremacy, or, euphemistically, pat
 <script src="js/jquery.height.js"></script>
 <script src="js/jquery.scroll.js"></script>
 <script src="js/jquery.toggle.js"></script>
+<script>
+$(document).ready(function(){
+  $('.textbox a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var target = $(this.hash);
+    if (target.length) {
+      $('#rightcolumn').animate({
+        scrollTop: target.offset().top - $('#rightcolumn').offset().top + $('#rightcolumn').scrollTop()
+      }, 500);
+    }
+  });
+});
+</script>
 </body>
 </html>
