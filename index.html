@@ -548,19 +548,15 @@ display: inline-block;
 
 </div>
 <style>
+/* 1. Large Screens (Default: Monitor is wider than 860px) */
 .image-tint {
-  /* Positioning the container */
   position: fixed; 
   bottom: -6%;      
-  left: 11%;     
-  transform: translateX(-50%);
+  left: 50%;     
+  margin-left: -540px; /* Aligns perfectly with the left edge of your large container */
   z-index: 999;
-  
-  /* Dimensions */
-  height: 400px;
+  height: 430px;
   display: block;
-  
-  /* REMOVED background-color to preserve your transparent PNG edges! */
 }
 
 .image-tint img {
@@ -568,20 +564,23 @@ display: inline-block;
   height: 100%;  
   width: auto;
   object-fit: cover;
-
-  /* THE VIBRANT PINK FILTER (Keeps white white & background transparent)
-     1. brightness(0.5) boosts the midtones so sepia can catch it strongly.
-     2. sepia(1) shifts the black lines to a tintable brown base.
-     3. saturate(8) cranks the pink intensity way up.
-     4. hue-rotate(305deg) dials the color straight into a rich magenta/pink. */
-
 }
-@media (max-width: 600px) {
+
+/* 2. Moderate Screens (Browser is between 601px and 860px wide) */
+@media screen and (max-width: 860px) {
+  .image-tint {
+    /* Your layout shrinks to 580px here, so we shift the graphic inward to match */
+    margin-left: -400px; 
+    height: 400px; /* Slightly scaled down so it doesn't crowd the smaller sidebar */
+  }
+}
+
+/* 3. Small Screens (Mobile: 600px and below) */
+@media screen and (max-width: 600px) {
   .image-tint {
     display: none !important; 
   }
-}
-</style>  <dt></dt>
+}</style>  <dt></dt>
 <dd></dd>
 </dl>
 </p>
