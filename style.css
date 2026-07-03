@@ -57,9 +57,8 @@ color:#775632;
 #rightcolumn a:not(.bg-none){
 border-bottom:1px solid #ddd;
 color:#fea5ab;
-display:inline-block;
-margin:2px 2px 2px 0;
-}
+display:inline; 
+margin:0 2px;   }
 #rightcolumn a:not(.bg-none):hover{
 background:rgba(254,238,237,.8);
 border-bottom:1px solid transparent;

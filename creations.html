@@ -25,7 +25,7 @@
 <header>
 <div id="header-inner">
 <h1><a href="index.html">Opalesque </a><a style="font-family:'EmojiFont';">&#x4a;</a></h1>
-DESCRIPTION
+<p>she'll say: "me, I wish I knew you..."</p>
 
 </div>
 <div id="open"><span id="open-icon"></span></div>
@@ -66,12 +66,47 @@ URL : http://rose.arceus.day<br>
 
 <article>
 <!-- ▼メインの内容▼ -->
+<style>
+    .circle-thing:hover{
+          cursor: pointer;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.6s;
+  -webkit-transition-timing-function: ease;
+      transform: scale(0.9) rotate(2deg) ;
+}
+</style>
+<h2>I'm Dreaming of You <span style="font-family:EmojiFont">c o</span></h2>
+<div class="textbox"><p><i>"It's spring, you're young, you're lovely, you have a right to be happy. Come back into the world.” <br> -S.J.</i></p> </div>
+<div style="display: flex; 
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+            gap: 20px; 
+            width: 95%; 
+            margin: 0px auto; 
+            justify-items: center;">
+  <div style="flex:1; max-width:220px; text-align: center;" class="circle-thing">
+    <a href="writings.html"><img src="image/writing.png" style="width: 100%; max-width: 220px; height: auto; display: inline-block;   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.1));
+"></a>
+<p style="font-family:Times; color:black;">Etchings, poems, fanfiction, notes, the like.</p>
+  </div>
 
-<h2> This page is...</h2>
-<p>A work in progress! Check back later.</p> 
+  <div style="flex:1; max-width:220px; text-align: center;" class="circle-thing">
+    <a href="illust.html"><img src="image/art.png" style="width: 100%; max-width: 220px; height: auto; display: inline-block;   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.1));
+"></a><p style="font-family:Times; color:black;">Scribbles, haphazard doodling & paintings.</p>
 
-<!-- ▲メインの内容▲ -->
-</article>
+  </div>
+</div><!-- ▲メインの内容▲ -->
+<br>
+<hr style="border-style: dotted;">
+<h3 style="margin-bottom:6px;">The poetics of creation</h3>
+<p>A particular sort of webweave to express my love and the guiding principles by which I create. I am, of course, constantly influenced by the science of <a href="politics.html">Marxism</a>.</p>
+<div class="roew">
+    <div class="columm">
+
+    </div>
+    <div class="columm">
+
+    </div>
+</div></article>
 
 </div><!-- ▲右側▲ -->
 </div><!-- ▲中央▲ -->
@@ -91,5 +126,46 @@ URL : http://rose.arceus.day<br>
 <script src="js/jquery.height.js"></script>
 <script src="js/jquery.scroll.js"></script>
 <script src="js/jquery.toggle.js"></script>
+<style>
+   .roew {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.columm {
+  padding: 0 4px;
+  flex: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .columm {
+    flex: 50%;
+  }
+}
+
+.columm img {
+  margin-top: 8px;
+  vertical-align: middle;
+  max-width: 100%;
+} 
+.thumbnail{
+  display:block;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.6s;
+  -webkit-transition-timing-function: ease;
+}
+.thumbnail:hover {
+    transform: scale(0.9);
+}
+@media screen and (max-width: 600px) {
+.thumbnail:hover {
+    transform: scale(0.9);
+  }
+}
+</style>
+
 </body>
 </html>
