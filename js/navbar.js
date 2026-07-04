@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="about.html">Webmistress</a></li>
             <li><a href="blog.html">Blog</a></li>
       <li><a href="politics.html">Politics </a></li>
-  </ul>
-  `;
+  </ul>`;
 
   document.getElementById("navbar").innerHTML = navbar;
 });
