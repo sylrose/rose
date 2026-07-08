@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>formula 1</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="js/navbar.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+<link rel="manifest" href="image/site.webmanifest">
+
+</head>
+<body>
+    <style>
+/* 1. Large Screens (Default: Monitor is wider than 860px) */
+.image-tint {
+  position: fixed; 
+  bottom: -6%;      
+  left: 50%;     
+  margin-left: -540px; /* Aligns perfectly with the left edge of your large container */
+  z-index: 999;
+  height: 460px;
+  display: block;
+  filter: hue-rotate(1deg) sepia(0.9);
+}
+
+.image-tint img {
+  display: block;
+  height: 100%;  
+  width: auto;
+  object-fit: cover;
+}
+
+/* 2. Moderate Screens (Browser is between 601px and 860px wide) */
+@media screen and (max-width: 860px) {
+  .image-tint {
+    /* Your layout shrinks to 580px here, so we shift the graphic inward to match */
+    margin-left: -450px; 
+    height: 500px; /* Slightly scaled down so it doesn't crowd the smaller sidebar */
+  }
+}
+
+/* 3. Small Screens (Mobile: 600px and below) */
+@media screen and (max-width: 600px) {
+  .image-tint {
+    display: none !important; 
+  }
+}</style>
+<!-- ▼全体の囲み▼ -->
+<div id="wrapper">
+<!-- ▼中央表示囲み▼ -->
+<div id="box" class="cf">
+
+<!-- ▼中央▼ -->
+<div id="contents" class="cf">
+
+<!-- ▼左側▼ -->
+<div id="leftcolumn">
+<div id="leftcolumn-inner">
+
+<!-- ▼ヘッダ▼ -->
+<header>
+<div id="header-inner">
+<h1><a href="index.html">Opalesque </a><a style="font-family:'EmojiFont';">&#x4a;</a></h1>
+<p>my good friend,<br> alex albon!</p>
+
+</div>
+<div id="open"><span id="open-icon"></span></div>
+</header><!-- ▲ヘッダ▲ -->
+
+<!-- ▼600以下で隠れる部分▼ -->
+<div id="side">
+
+<!-- ▼メニュー▼ -->
+<!-- ページ内リンクにはdata-box=".scroll"を付けて下さい -->
+<div id="menu-wrap">
+<div id="menu">
+<nav>
+<ul>
+
+<div id="navbar"></div>    
+
+
+</ul>
+</nav>
+</div></div><!-- ▲メニュー▲ -->
+
+<!-- ▼メニューの下▼ -->
+<div id="leftcolumn-text">
+
+MASTER: Mika <br>
+SITE NAME: Opalesque<br>
+URL : http://rose.arceus.day<br>
+<img src="image/banner200.gif" width="200" height="40" alt="banner">
+
+</div><!-- ▲メニューの下▲ -->
+
+</div><!-- ▲600以下で隠れる部分▲ -->
+</div></div><!-- ▲左側▲ -->
+
+<!-- ▼右側▼ -->
+<div id="rightcolumn" class="scroll">
+
+<article>
+<!-- ▼メインの内容▼ -->
+
+<h2>  FORMULA 1 <img src="image/williams.gif" style="margin-left:10px; margin-bottom:-10px;"width=80px></h2>
+<p style="font-size:120%; text-align:center;"><i>rpf first; my Pet Millionares second</i></p> 
+<div style="display:flex;  align-items: center;  
+  justify-content: center; margin-top:7px;
+">
+<img src="image/galexcar.webp" style="width:150px; height:100px; "><img src="image/shirtoff.webp" style="height:100px;">
+</div>
+
+<hr style="border-style:dotted;">
+
+<div style="display:flex; gap:20px;justify-content:center;align-items:center;">
+<div style="width:40%; height:95px; overflow:scroll; border:1px dotted;">
+<h3 style="margin-top:5px; margin-bottom:10px; margin-left:5px; font-family:Times">tolerated drivers</h3>
+<p style="font-family:Times; text-align:left; margin-left:5px; line-height:22px;">
+<span class="marker">gr63</span> <span class="marker">aa23</span> <span class="marker">op81</span> <span class="marker">gb5</span> <span class="marker">fc43</span> <span class="marker">al41</span> lh44 ln4 vb77
+</p>
+</div>
+<div style="width:40%; height:95px; overflow:scroll; border:1px dotted;">
+<h3 style="margin-top:5px; margin-bottom:10px; margin-left:5px; font-family:Times">pairings</h3>
+<p style="font-family:Times; text-align:left; margin-left:5px; line-height:22px;">
+<span class="marker">galex</span> <span class="marker">gabico</span> <span class="marker">georgetoto</span> britcedes landoscar sebmark oscmark gax
+</p>
+</div>
+</div>
+<br>
+<!----<div style="display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;">
+<img src="image/crash.gif" width=300px style="height:100px; "> -->
+</div>
+<!-- ▲メインの内容▲ -->
+</article>
+
+</div><!-- ▲右側▲ -->
+</div><!-- ▲中央▲ -->
+
+<!-- ▼フッタ▼ -->
+<footer>
+<div id="footer-inner">
+</div>
+</footer><!-- ▲フッタ▲ -->
+
+</div><!-- ▲中央表示囲み▲ -->
+</div><!-- ▲全体の囲み▲ -->
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/jquery.height.js"></script>
+<script src="js/jquery.scroll.js"></script>
+<script src="js/jquery.toggle.js"></script>
+<div class="image-tint">
+  <img src="image/Untitled design (8).png" alt="Anthy Himemiya">
+
+  </div>
+
+</body>
+</html>
